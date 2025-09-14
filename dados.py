@@ -249,7 +249,7 @@ def carrega_csv():
                         'ruas': int(row['ruas']),
                         'largura': float(row['largura']),
                         'comprimento': float(row['comprimento']),
-                        'total_insumo': float(row['total-insumo']),
+                        'total_insumo': float(row['totalinsumo']),
                     })
                 elif row['cultura'] == 'Milho':
                     dados_milho.append({
@@ -258,7 +258,7 @@ def carrega_csv():
                         'qtd_por_m2': float(row['qtd-por-m2']),
                         'ruas': int(row['ruas']),
                         'raio': float(row['raio']),
-                        'total_insumo': float(row['total-insumo']),
+                        'total_insumo': float(row['totalinsumo']),
                     })
 
         print(f'Dados carregados de {filename}')
@@ -273,7 +273,7 @@ def salva_csv():
     global filename
     with open(filename, mode='w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['cultura', 'area', 'insumo', 'qtd-por-m2', 'ruas', 'total-insumo', 'largura', 'comprimento', 'raio'])
+        writer.writerow(['cultura', 'area', 'insumo', 'qtd-por-m2', 'ruas', 'totalinsumo', 'largura', 'comprimento', 'raio'])
 
         for d in dados_soja:
             writer.writerow(['Soja', f'{d['area']:.2f}', d['insumo'], d['qtd_por_m2'], d['ruas'], f'{d['total_insumo']:.2f}', d['largura'], d['comprimento'], ''])
