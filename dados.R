@@ -32,6 +32,7 @@ cat("Desvio-padrão dos insumos:", sd(insumos, na.rm = TRUE), "\n")
 # ---------------------------
 # install.packages("httr")
 library(httr)
+library(jsonlite)
 
 # Exemplo com OpenWeatherMap (precisa de chave de API gratuita)
 cidade <- "Sao Paulo"
