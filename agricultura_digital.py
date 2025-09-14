@@ -24,27 +24,33 @@ def calcular_area_milho(raio):
 
 #define função para entrada de dados
 def entrada_dados():
-    print('Escolha a cultura:')
-    for i, c in enumerate(culturas):
-        print(f'{i+1} - {c}')
-    op = int(input('Opção: '))
-    if op == 1:
-        largura = float(input('Largura da área (m): '))
-        comprimento = float(input('Comprimento da área (m): '))
-        insumo = input('Nome do insumo: ')
-        qtd = float(input('Quantidade do insumo por m²: '))
-        ruas = int(input('Quantidade de ruas: '))
-        dados_soja.append({'largura': largura, 'comprimento': comprimento, 'insumo': insumo, 'qtd_por_m2': qtd, 'ruas': ruas})
-        salva_csv()
-    elif op == 2:
-        raio = float(input('Raio da área (m): '))
-        insumo = input('Nome do insumo: ')
-        qtd = float(input('Quantidade do insumo por m²: '))
-        ruas = int(input('Quantidade de ruas: '))
-        dados_milho.append({'raio': raio, 'insumo': insumo, 'qtd_por_m2': qtd, 'ruas': ruas})
-        salva_csv()
-    else:
-        print('Opção inválida!')
+    while True:
+        print('Escolha a cultura:')
+        for i, c in enumerate(culturas):
+            print(f'{i+1} - {c}')
+        print('0 - Voltar ao menu')
+        op = int(input('Opção: '))
+        if op == 1:
+            largura = float(input('Largura da área (m): '))
+            comprimento = float(input('Comprimento da área (m): '))
+            insumo = input('Nome do insumo: ')
+            qtd = float(input('Quantidade do insumo por m²: '))
+            ruas = int(input('Quantidade de ruas: '))
+            dados_soja.append({'largura': largura, 'comprimento': comprimento, 'insumo': insumo, 'qtd_por_m2': qtd, 'ruas': ruas})
+            salva_csv()
+            break
+        elif op == 2:
+            raio = float(input('Raio da área (m): '))
+            insumo = input('Nome do insumo: ')
+            qtd = float(input('Quantidade do insumo por m²: '))
+            ruas = int(input('Quantidade de ruas: '))
+            dados_milho.append({'raio': raio, 'insumo': insumo, 'qtd_por_m2': qtd, 'ruas': ruas})
+            salva_csv()
+            break
+        elif op == 0:
+            break
+        else:
+            print('Opção inválida!')
 
 #define função para saída de dados
 def saida_dados(cultura=None):
