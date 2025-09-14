@@ -36,15 +36,23 @@ def entrada_dados():
             insumo = input('Nome do insumo: ')
             qtd = float(input('Quantidade do insumo por m²: '))
             ruas = int(input('Quantidade de ruas: '))
-            dados_soja.append({'largura': largura, 'comprimento': comprimento, 'insumo': insumo, 'qtd_por_m2': qtd, 'ruas': ruas})
+
+            total_insumo = calcular_area_soja(largura, comprimento) * qtd * ruas
+
+            dados_soja.append({'area': calcular_area_soja(largura, comprimento), 'largura': largura, 'comprimento': comprimento, 'insumo': insumo, 'qtd_por_m2': qtd, 'ruas': ruas, 'total_insumo': total_insumo})
+
             salva_csv()
             break
         elif op == 2:
+
             raio = float(input('Raio da área (m): '))
             insumo = input('Nome do insumo: ')
             qtd = float(input('Quantidade do insumo por m²: '))
             ruas = int(input('Quantidade de ruas: '))
-            dados_milho.append({'raio': raio, 'insumo': insumo, 'qtd_por_m2': qtd, 'ruas': ruas})
+
+            total_insumo = calcular_area_milho(raio) * qtd * ruas
+
+            dados_milho.append({'area': calcular_area_milho(raio), 'raio': raio, 'insumo': insumo, 'qtd_por_m2': qtd, 'ruas': ruas, 'total_insumo': total_insumo})
             salva_csv()
             break
         elif op == 0:
@@ -56,22 +64,41 @@ def entrada_dados():
 def saida_dados(cultura=None):
 
     if cultura == 'Soja' or cultura is None:
-        print('\nDados Soja:')
+        
+        # Cabeçalho com tipo de cultura
+        print('\n+---------------------------------------------------------------------------------------------+')
+        print('| DADOS SOJA                                                                                  |')
+
         if(dados_soja):
+            # Cabeçalho com colunas da tabela
+            print('+----+------------------+---------+-------------+-------------+--------+------+---------------+')
+            print(f'| ID | Insumo           | Largura | Comprimento |  Área (m²)  | Qtd/m² | Ruas |  Total Insumo |')
+            print(f'|----|------------------|---------|-------------|-------------|--------|------+---------------|')
+
             for i, d in enumerate(dados_soja):
-                area = calcular_area_soja(d['largura'], d['comprimento'])
-                total_insumo = area * d['qtd_por_m2'] * d['ruas']
-                print(f'{i} - Largura: {d["largura"]:.2f}, Comprimento: {d["comprimento"]:.2f}, Área: {area:.2f} m², Insumo: {d["insumo"]}, Qtd/m²: {d["qtd_por_m2"]}, Ruas: {d["ruas"]}, Total: {total_insumo:.2f}')
+                print(f'|{i:>3} | {d["insumo"]:<16} | {d["largura"]:>7.2f} | {d["comprimento"]:>11.2f} |   {d["area"]:>9.2f} | {d["qtd_por_m2"]:>6} | {d["ruas"]:>4} | {d["total_insumo"]:>13.2f} |')
+
+            print(f'+----+------------------+---------+-------------+-------------+--------+------+---------------+')
         else:
             print('Nenhum dado de soja registrado.')
 
     if cultura == 'Milho' or cultura is None:
-        print('\nDados Milho:')
+        # Cabeçalho com tipo de cultura
+        print('\n+----------------------------------------------------------------------------------+')
+        print('| DADOS MILHO                                                                      |')
+
         if(dados_milho):
+            # Cabeçalho com colunas da tabela
+            print('+----+------------------+---------+-------------+-------------+--------+-----------+')
+            print('| ID | Insumo           |   Raio  |  Área (m²)  |   Qtd/m²    |  Ruas  |   Total   |')
+            print('+----+------------------+---------+-------------+-------------+--------+-----------+')
+
             for i, d in enumerate(dados_milho):
                 area = calcular_area_milho(d['raio'])
                 total_insumo = area * d['qtd_por_m2'] * d['ruas']
-                print(f'{i} - Raio: {d["raio"]:.2f}, Área: {area:.2f} m², Insumo: {d["insumo"]}, Qtd/m²: {d["qtd_por_m2"]}, Ruas: {d["ruas"]}, Total: {total_insumo:.2f}')
+                print(f'|{i:>3} | {d["insumo"]:<16} | {d["raio"]:>7.2f} | {area:>11.2f} |      {d["qtd_por_m2"]:>6} |   {d["ruas"]:>4} |{total_insumo:>10.2f} |')
+
+            print('+----+------------------+---------+-------------+-------------+--------+-----------+')
         else:
             print('Nenhum dado de milho registrado.')
 
@@ -107,10 +134,14 @@ def atualizar_dados():
                     if not qtd: qtd = dados_soja[idx]["qtd_por_m2"]
                     if not ruas: ruas = dados_soja[idx]["ruas"]
 
+                    total_insumo = calcular_area_soja(float(largura), float(comprimento)) * float(qtd) * int(ruas)
+
                     dados_soja[idx] = {
+                        'area': calcular_area_soja(float(largura), float(comprimento)),
                         'largura': float(largura), 
                         'comprimento': float(comprimento),
                         'insumo': insumo,
+                        'total_insumo': total_insumo,
                         'qtd_por_m2': float(qtd),
                         'ruas': int(ruas)
                     }
@@ -139,11 +170,15 @@ def atualizar_dados():
                     if not qtd: qtd = dados_milho[idx]["qtd_por_m2"]
                     if not ruas: ruas = dados_milho[idx]["ruas"]
 
+                    total_insumo = calcular_area_milho(float(raio)) * float(qtd) * int(ruas)
+
                     dados_milho[idx] = {
+                        'area': calcular_area_milho(float(raio)),
                         'raio': float(raio),
                         'insumo': insumo,
                         'qtd_por_m2': float(qtd),
-                        'ruas': int(ruas)
+                        'ruas': int(ruas),
+                        'total_insumo': total_insumo
                     }
                     salva_csv()
                     break
@@ -214,6 +249,7 @@ def carrega_csv():
                         'ruas': int(row['ruas']),
                         'largura': float(row['largura']),
                         'comprimento': float(row['comprimento']),
+                        'total_insumo': float(row['total-insumo']),
                     })
                 elif row['cultura'] == 'Milho':
                     dados_milho.append({
@@ -222,7 +258,9 @@ def carrega_csv():
                         'qtd_por_m2': float(row['qtd-por-m2']),
                         'ruas': int(row['ruas']),
                         'raio': float(row['raio']),
+                        'total_insumo': float(row['total-insumo']),
                     })
+
         print(f'Dados carregados de {filename}')
     except FileNotFoundError:
         print(f'Arquivo {filename} não encontrado. Iniciando com dados vazios.')
@@ -238,14 +276,10 @@ def salva_csv():
         writer.writerow(['cultura', 'area', 'insumo', 'qtd-por-m2', 'ruas', 'total-insumo', 'largura', 'comprimento', 'raio'])
 
         for d in dados_soja:
-            area = calcular_area_soja(d['largura'], d['comprimento'])
-            total_insumo = area * d['qtd_por_m2'] * d['ruas']
-            writer.writerow(['Soja', f'{area:.2f}', d['insumo'], d['qtd_por_m2'], d['ruas'], f'{total_insumo:.2f}', d['largura'], d['comprimento'], ''])
+            writer.writerow(['Soja', f'{d['area']:.2f}', d['insumo'], d['qtd_por_m2'], d['ruas'], f'{d['total_insumo']:.2f}', d['largura'], d['comprimento'], ''])
 
         for d in dados_milho:
-            area = calcular_area_milho(d['raio'])
-            total_insumo = area * d['qtd_por_m2'] * d['ruas']
-            writer.writerow(['Milho', f'{area:.2f}', d['insumo'], d['qtd_por_m2'], d['ruas'], f'{total_insumo:.2f}', '', '', d['raio']])
+            writer.writerow(['Milho', f'{d['area']:.2f}', d['insumo'], d['qtd_por_m2'], d['ruas'], f'{d['total_insumo']:.2f}', '', '', d['raio']])
 
     print(f'Dados salvos em {filename}')
 
