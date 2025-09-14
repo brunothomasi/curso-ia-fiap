@@ -1,11 +1,12 @@
 # farmtech.R
-#install.packages("jsonlite")
-#install.packages("rlang")
+# install.packages("jsonlite")
+# install.packages("rlang")
 # ---------------------------
 # Exemplo de dados simulados
 # ---------------------------
 # Lê o CSV que o Python atualizou
-dados <- read.csv("c:/Users/Daniel/Desktop/MEUS PROJETOS/dados.csv",
+
+dados <- read.csv("dados.csv",
                   header = TRUE,
                   sep = ",",
                   fileEncoding = "UTF-8")
@@ -13,8 +14,7 @@ dados <- read.csv("c:/Users/Daniel/Desktop/MEUS PROJETOS/dados.csv",
 
 culturas <- dados$cultura
 areas <- as.numeric(dados$area)
-insumos <- as.numeric(dados$insumo)
-
+insumos <- as.numeric(dados$totalinsumo)
 
 
 # ---------------------------
@@ -27,24 +27,27 @@ cat("Média dos insumos:", mean(insumos, na.rm = TRUE), "\n")
 cat("Desvio-padrão dos insumos:", sd(insumos, na.rm = TRUE), "\n")
 
 
-
 # ---------------------------
-# (Ir além) Consulta a API meteorológica
+# Consulta a API meteorológica
 # ---------------------------
-#library(httr)
-#library(jsonlite)
+# install.packages("httr")
+library(httr)
 
 # Exemplo com OpenWeatherMap (precisa de chave de API gratuita)
-#cidade <- "Sao Paulo"
-#api_key <- "SUA_CHAVE_API_AQUI"
-#url <- paste0("https://api.openweathermap.org/data/2.5/weather?q=", 
-              #cidade, "&appid=", api_key, "&units=metric&lang=pt")
+cidade <- "Sao Paulo"
+api_key <- "3f31e968e6dd877bfba6500be2574b3a"
 
-#resposta <- GET(url)
-#dados <- fromJSON(content(resposta, "text", encoding = "UTF-8"))
+# url encoded
+url <- paste0("https://api.openweathermap.org/data/2.5/weather?q=", 
+              URLencode(cidade), "&appid=", api_key, "&units=metric&lang=pt")
 
-#cat("Clima em", cidade, ":", dados$weather[[1]]$description, "\n")
-#cat("Temperatura:", dados$main$temp, "°C\n")
-#cat("Umidade:", dados$main$humidity, "%\n")
+cat("Consultando clima em", cidade, "...\n")
+resposta <- GET(url)
+previsao <- fromJSON(content(resposta, "text", encoding = "UTF-8"))
 
-print(culturas)
+dataframe <- as.data.frame(previsao$weather)
+clima <- dataframe$description
+
+cat("Clima em", cidade, ":", clima, "\n")
+cat("Temperatura:", previsao$main$temp, "°C\n")
+cat("Umidade:", previsao$main$humidity, "%\n")
