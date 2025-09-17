@@ -72,16 +72,16 @@ def saida_dados(cultura=None):
         if(dados_soja):
             # Cabeçalho com colunas da tabela
             print('+----+------------------+---------+-------------+-------------+--------+------+---------------+')
-            print(f'| ID | Insumo           | Largura | Comprimento |  Área (m²)  | Qtd/m² | Ruas |  Total Insumo |')
-            print(f'|----|------------------|---------|-------------|-------------|--------|------+---------------|')
+            print('| ID | Insumo           | Largura | Comprimento |  Área (m²)  | Qtd/m² | Ruas |  Total Insumo |')
+            print('|----|------------------|---------|-------------|-------------|--------|------+---------------|')
 
             for i, d in enumerate(dados_soja):
                 print(f'|{i:>3} | {d["insumo"]:<16} | {d["largura"]:>7.2f} | {d["comprimento"]:>11.2f} |   {d["area"]:>9.2f} | {d["qtd_por_m2"]:>6} | {d["ruas"]:>4} | {d["total_insumo"]:>13.2f} |')
 
-            print(f'+----+------------------+---------+-------------+-------------+--------+------+---------------+')
         else:
-            print('Nenhum dado de soja registrado.')
+            print('| Nenhum dado de soja registrado                                                     |')
 
+        print('+----+------------------+---------+-------------+-------------+--------+------+---------------+')
     if cultura == 'Milho' or cultura is None:
         # Cabeçalho com tipo de cultura
         print('\n+----------------------------------------------------------------------------------+')
@@ -98,10 +98,10 @@ def saida_dados(cultura=None):
                 total_insumo = area * d['qtd_por_m2'] * d['ruas']
                 print(f'|{i:>3} | {d["insumo"]:<16} | {d["raio"]:>7.2f} | {area:>11.2f} |      {d["qtd_por_m2"]:>6} |   {d["ruas"]:>4} |{total_insumo:>10.2f} |')
 
-            print('+----+------------------+---------+-------------+-------------+--------+-----------+')
         else:
-            print('Nenhum dado de milho registrado.')
+            print('| Nenhum dado de milho registrado                                              |')
 
+    print('+----+------------------+---------+-------------+-------------+--------+-----------+')
     #se cultura estiver definida e não estiver no array de culturas
     if cultura is not None and cultura not in culturas:
         print('Cultura inválida!')
