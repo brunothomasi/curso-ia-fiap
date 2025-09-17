@@ -1,3 +1,4 @@
 cultura,area,insumo,qtd-por-m2,ruas,totalinsumo,largura,comprimento,raio
-Soja,200.00,teste,1.0,2,400.00,10.0,20.0,
-Milho,31415.93,teste 2,30.0,3,2827433.39,,,100.0
+Soja,20000.00,defensivo,1.0,10,200000.00,100.0,200.0,
+Soja,150000.00,teste,20.0,10,30000000.00,500.0,300.0,
+Milho,31415.93,teste y,20.0,10,6283185.31,,,100.0
