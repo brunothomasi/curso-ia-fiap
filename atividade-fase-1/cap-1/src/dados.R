@@ -6,7 +6,7 @@
 # ---------------------------
 # Lê o CSV que o Python atualizou
 
-dados <- read.csv("dados.csv",
+dados <- read.csv("../data/dados.csv",
                   header = TRUE,
                   sep = ",",
                   fileEncoding = "UTF-8")

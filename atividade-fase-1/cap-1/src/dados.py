@@ -6,7 +6,7 @@ dados_soja = []  # Cada item: {'largura': float, 'comprimento': float, 'insumo':
 dados_milho = [] # Cada item: {'raio': float, 'insumo': str, 'qtd_por_m2': float, 'ruas': int}
 
 #nome do arquivo que irá persistir os dados para consulta no R e para manter dados após reiniciar aplicação
-filename = 'dados.csv'
+filename = '../data/dados.csv'
 
 #importa biblioteca math para cálculos matemáticos (pi)
 import math
