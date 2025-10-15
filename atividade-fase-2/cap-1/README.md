@@ -14,6 +14,7 @@
 - <a href="https://www.linkedin.com/in/bruno-thomasi-4853ab58/">Bruno de Moraes Thomasi - RM567919</a>
 - <a href="https://www.linkedin.com/in/hugo-camposs98/">Hugo da Silva Campos - RM567421</a>
 
+
 ## 📜 Descrição
 
 **Sistema de Monitoramento Agrícola Inteligente para Cultivo de Café com ESP32.**
@@ -24,9 +25,15 @@ Quando detecta solo seco (<45%), aciona automaticamente bomba de irrigação por
 
 Fornece diagnósticos específicos para café com proporções ideais de adubação (4-14-8) e recomendações precisas baseadas nas deficiências nutricionais detectadas.
 
+## Vídeo demonstrativo no YouTube:
+
+[![Clique aqui para abrir o vídeo](https://img.youtube.com/vi/swBj-vuOuaY/maxresdefault.jpg)](https://youtu.be/swBj-vuOuaY)
+
+<p><i><a href="https://youtu.be/swBj-vuOuaY" target="_blank">Link: https://youtu.be/swBj-vuOuaY</a></i></p>
+
 ## Link de acesso no GitHub:
 
-<a href="https://github.com/brunothomasi/curso-ia-fiap/tree/main/atividade-fase-2/cap-1">Clique aqui para acessar a pasta no Repositório no GitHub</a>
+<a href="https://github.com/brunothomasi/curso-ia-fiap/tree/main/atividade-fase-2/cap-1" target="_blank">Clique aqui para acessar a pasta no Repositório no GitHub</a>
 
 ## Circuito:
 
