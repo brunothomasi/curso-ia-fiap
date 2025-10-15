@@ -18,6 +18,10 @@
 
 **Sistema Inteligente Agro**: Aplicação Python para produtores rurais que integra gestão de áreas de arrendamento, controle de estoque e previsão de preços de commodities (café/milho). Utiliza machine learning (Regressão Linear) para analisar históricos e prever valorizações futuras. Oferece recomendações inteligentes combinando dados de safra, estoque e tendências de mercado. Interface por menu interativo facilita decisões de investimento baseadas em dados, democratizando ferramentas de inteligência comercial para o agronegócio.
 
+## Link de acesso no GitHub:
+
+<a href="https://github.com/brunothomasi/curso-ia-fiap/tree/main/atividade-fase-2/cap-6">Clique aqui para acessar a pasta no Repositório no GitHub</a>
+
 ## 📁 Estrutura de pastas
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
@@ -34,6 +38,9 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 3. No terminal acesse a pasta criada e dentro dela a pasta atividade-fase-2/cap-6
 5. Execute no terminal o comando abaixo:
 ```python src/sistema_inteligente_agro.py```
+
+### ❓ Problemas Encontrados
+- Não conseguimos configurar o ambiente Oracle SQL, portanto fizemos utilizando dados em JSON virtuais, sugiro que seria interessante da próxima vez usarmos soluções Opensource mais fáceis de configurar, tais quais MySQL, MongoDB ou PostegreSQL.
 
 ## 🗃 Histórico de lançamentos
 
