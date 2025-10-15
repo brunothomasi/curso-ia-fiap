@@ -14,6 +14,10 @@
 - <a href="https://www.linkedin.com/in/bruno-thomasi-4853ab58/">Bruno de Moraes Thomasi - RM567919</a>
 - <a href="https://www.linkedin.com/in/hugo-camposs98/">Hugo da Silva Campos - RM567421</a>
 
+## Link de acesso no GitHub:
+
+<a href="https://github.com/brunothomasi/curso-ia-fiap/tree/main/atividade-fase-2/cap-7">Clique aqui para acessar a pasta no Repositório no GitHub</a>
+
 ## 📜 Descrição
 
 Este projeto implementa uma análise estatística completa para dados agrícolas usando R. O script automatiza desde o carregamento de dados até a geração de relatórios, calculando medidas de tendência central, dispersão, posição e forma da distribuição. Produz visualizações profissionais (histogramas, boxplots, QQ-plots) e análises categóricas de classificação de safras. Gera relatórios em CSV e interpretações automáticas dos resultados, sendo uma ferramenta completa para pesquisadores e analistas do agronegócio.
@@ -36,7 +40,7 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 3. No terminal acesse a pasta criada e dentro dela a pasta atividade-fase-2/cap-7
 4. Coloque o arquivo com a base de dados agro na pasta "data" pasta com o nome "data_agro.csv"
 5. Execute no terminal o comando abaixo:
-```Rscript src/fase2_cap9.R```
+```Rscript src/HugoCampos_e_BrunoThomasi_RM567421_e_RM567919_fase2_cap9.R```
 
 ## 🗃 Histórico de lançamentos
 
