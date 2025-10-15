@@ -41,6 +41,7 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 4. Coloque o arquivo com a base de dados agro na pasta "data" pasta com o nome "data_agro.csv"
 5. Execute no terminal o comando abaixo:
 ```Rscript src/script.R```
+6. O resultado será gerado e disponibilizado na pasta output
 
 ## 🗃 Histórico de lançamentos
 

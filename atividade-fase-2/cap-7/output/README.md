@@ -1,0 +1,1 @@
+Aqui serão guardados os arquivos gerados como resultado do script
