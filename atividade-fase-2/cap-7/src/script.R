@@ -1,3 +1,6 @@
+#HugoCampos_RM567421_fase2_cap9
+#BrunoThomasi_RM567919_fase2_cap9
+
 pacotes <- c("dplyr", "ggplot2", "moments")
 for(p in pacotes){
   if(!require(p, character.only = TRUE)){

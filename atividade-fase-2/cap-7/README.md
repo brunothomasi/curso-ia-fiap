@@ -40,7 +40,7 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 3. No terminal acesse a pasta criada e dentro dela a pasta atividade-fase-2/cap-7
 4. Coloque o arquivo com a base de dados agro na pasta "data" pasta com o nome "data_agro.csv"
 5. Execute no terminal o comando abaixo:
-```Rscript src/HugoCampos_e_BrunoThomasi_RM567421_e_RM567919_fase2_cap9.R```
+```Rscript src/script.R```
 
 ## 🗃 Histórico de lançamentos
 
