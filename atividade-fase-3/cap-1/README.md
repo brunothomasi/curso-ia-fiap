@@ -66,9 +66,9 @@ A Consulta acima encontra-se disponível em <a href="./src/search-rainfall_mm.sq
 
 ## Demonstração Estrutura em Vídeo:
 
-Colocar aqui vídeo.
+<div style="text-align:center"><a href="https://youtu.be/6URtr6Ls9uc" target="_blank" title="Abrir o vídeo"><img src="assets/video.png" alt="Video YouTube" width="80%" height="auto"></a></div>
 
-<a href="" target="_blank">Link Vídeo YouTube</a>
+[Clique para abrir o Vídeo no YouTube - https://youtu.be/6URtr6Ls9uc](https://youtu.be/6URtr6Ls9uc)
 
 ## 🗃 Histórico de lançamentos
 
