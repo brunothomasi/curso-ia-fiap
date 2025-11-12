@@ -1,0 +1,11 @@
+farm_id,region,crop_type,soil_moisture_%,soil_pH,temperature_C,rainfall_mm,humidity_%,sunlight_hours,irrigation_type,fertilizer_type
+FARM0001,North India,Wheat,35.95,5.99,17.79,75.62,77.03,7.27,None,Organic
+FARM0002,South USA,Soybean,19.74,7.24,30.18,89.91,61.13,5.67,Sprinkler,Inorganic
+FARM0003,South USA,Wheat,29.32,7.16,27.37,265.43,68.87,8.23,Drip,Mixed
+FARM0004,Central USA,Maize,17.33,6.03,33.73,212.01,70.46,5.03,Sprinkler,Organic
+FARM0005,Central USA,Cotton,19.37,5.92,33.86,269.09,55.73,7.93,None,Mixed
+FARM0006,Central USA,Rice,44.91,5.78,24.87,238.95,83.06,4.92,Sprinkler,Mixed
+FARM0007,North India,Soybean,36.28,7.04,21.8,123.38,47.91,4.02,Manual,Mixed
+FARM0008,East Africa,Maize,27.1,5.72,22.26,296.33,80.34,5.44,Sprinkler,Mixed
+FARM0009,Central USA,Soybean,40.54,5.34,19.24,184.82,76.5,5.21,Manual,Inorganic
+FARM0010,East Africa,Rice,10.25,6.92,16.18,66.85,41.57,5.98,Sprinkler,Inorganic

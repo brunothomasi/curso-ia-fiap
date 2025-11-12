@@ -1,0 +1,1 @@
+SELECT * FROM sensores WHERE crop_type = 'Wheat' ORDER BY farm_id ASC;

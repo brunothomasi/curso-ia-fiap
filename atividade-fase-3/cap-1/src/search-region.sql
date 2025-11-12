@@ -1,0 +1,1 @@
+SELECT * FROM sensores WHERE region LIKE '%USA%' ORDER BY farm_id ASC;

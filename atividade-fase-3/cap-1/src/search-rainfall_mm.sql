@@ -1,0 +1,1 @@
+SELECT * FROM sensores WHERE rainfall_mm > 10000 ORDER BY rainfall_mm DESC;
