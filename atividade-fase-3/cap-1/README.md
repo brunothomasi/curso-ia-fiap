@@ -36,23 +36,31 @@ A Estrutura da tabela criada encontra-se disponível em <a href="./src/create-ta
 
 ### Consultas de demonstração realizadas
 
+#### Todos Registros:
+
 ![Print de tela contendo dados importados em um SELECT sem filtragem](assets/1.png)
 *Print de tela contendo dados importados em um SELECT sem filtragem.*
 
 A Consulta acima encontra-se disponível em <a href="./src/search-unfiltered.sql">/src/search-unfiltered.sql</a>
 
+#### Busca por Região
+
 ![Print de tela contendo busca por uma região específica](assets/2.png)
-*Print de tela contendo busca por uma região específica.*
+*Print de tela contendo busca por uma região que contenha "USA" no nome.*
 
 A Consulta acima encontra-se disponível em <a href="./src/search-region.sql">/src/search-region.sql</a>
 
+#### Busca por Cultura
+
 ![Print de tela contendo busca por uma cultura específica](assets/3.png)
-*Print de tela contendo busca por uma cultura específica.*
+*Print de tela contendo busca por uma cultura específica "Wheat".*
 
 A Consulta acima encontra-se disponível em <a href="./src/search-crop_type.sql">/src/search-crop_type.sql</a>
 
-![Print de tela contendo busca por registros que tenham tido um registro alto de humidade](assets/4.png)
-*Print de tela contendo busca por registros que tenham tido um registro alto de humidade.*
+#### Busca por Quantidade de Chuva
+
+![Print de tela contendo busca por registros que tenham tido um registro alto de chuva](assets/4.png)
+*Print de tela contendo busca por registros que tenham tido chuva acima 10000.*
 
 A Consulta acima encontra-se disponível em <a href="./src/search-rainfall_mm.sql">/src/search-rainfall_mm.sql</a>
 
@@ -60,7 +68,7 @@ A Consulta acima encontra-se disponível em <a href="./src/search-rainfall_mm.sq
 
 Colocar aqui vídeo.
 
-<a href="" target="_blank">Link</a>
+<a href="" target="_blank">Link Vídeo YouTube</a>
 
 ## 🗃 Histórico de lançamentos
 
